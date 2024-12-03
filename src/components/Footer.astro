@@ -1,0 +1,43 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-farm-green text-white py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-xl mb-4">Contact Us</h3>
+        <ul class="space-y-2">
+          <li>📞 <a href="tel:07904630649">07904 630 649</a></li>
+          <li>✉️ <a href="mailto:Info@stonescottagefarm.co.uk">Info@stonescottagefarm.co.uk</a></li>
+          <li>📱 WhatsApp: 07904 630 649</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-xl mb-4">Location</h3>
+        <address class="not-italic">
+          Stones Cottage Farm<br />
+          Hebden Bridge Road<br />
+          Oxenhope<br />
+          West Yorkshire<br />
+          BD22 9QH
+        </address>
+      </div>
+      
+      <div>
+        <h3 class="text-xl mb-4">Follow Us</h3>
+        <a href="https://www.facebook.com/StonesCottageFarm?locale=en_GB" 
+           class="inline-block hover:text-cream transition-colors"
+           target="_blank"
+           rel="noopener noreferrer">
+          Facebook
+        </a>
+      </div>
+    </div>
+    
+    <div class="mt-8 pt-8 border-t border-cream/20 text-center">
+      <p>&copy; {currentYear} Stones Cottage Farm. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

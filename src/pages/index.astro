@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ImageCarousel from '../components/ImageCarousel';
+
+const images = [
+  { src: '/images/stonescottageimg1.png', alt: 'Stones Cottage Farm View 1' },
+  { src: '/images/stonescottageimg2.png', alt: 'Stones Cottage Farm View 2' },
+  { src: '/images/stonescottageimg3.png', alt: 'Stones Cottage Farm View 3' },
+  { src: '/images/stonescottageimg4.png', alt: 'Stones Cottage Farm View 4' },
+  { src: '/images/stonescottageimg5.png', alt: 'Stones Cottage Farm View 5' },
+  { src: '/images/stonescottageimg6.png', alt: 'Stones Cottage Farm View 6' },
+  { src: '/images/stonescottageimg7.png', alt: 'Stones Cottage Farm View 7' },
+  { src: '/images/stonescottageimg8.png', alt: 'Stones Cottage Farm View 8' },
+  { src: '/images/stonescottageimg9.png', alt: 'Stones Cottage Farm View 9' },
+];
+
+const facilities = [
+  { icon: '🎮', title: 'Gaming Barn', description: 'Entertainment for all ages' },
+  { icon: '🌳', title: 'Private Garden', description: 'Peaceful outdoor space' },
+  { icon: '🔌', title: 'EV Charging', description: 'Convenient charging point' },
+  { icon: '🛁', title: 'Hot Tub', description: 'Relaxation under the stars' },
+  { icon: '🐑', title: 'Animal Access', description: 'Meet our friendly farm animals' },
+  { icon: '👨‍👩‍👧‍👦', title: 'Family-Friendly', description: 'Perfect for all ages' },
+];
+---
+
+<Layout title="Welcome">
+  <Hero
+    title="Stones Cottage Farm"
+    subtitle="Experience the Charm of Bronte Moorland – Farm Life Meets Luxury Cottage Stays"
+    image="/images/stonescottage02.jpeg"
+  />
+
+  <section class="py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl text-center mb-12 text-farm-green">Welcome to Our Farm</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <ImageCarousel client:load images={images} />
+        </div>
+        <div class="space-y-6">
+          <p class="text-lg">
+            Welcome to Stones Cottage Farm, where traditional Yorkshire charm meets modern comfort.
+            Nestled in the heart of Bronte Country, our historic farm offers a unique blend of luxury
+            accommodation and authentic farm experiences.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="https://www.airbnb.co.uk/rooms/16715702?preview_for_ml=true&source_impression_id=p3_1583062535_tcxWSGmBjikvoEQ3&fbclid=IwY2xjawG74xRleHRuA2FlbQIxMAABHa8S4mJ3T9IfGvxMOME179fUIf1YN8ME490WIkgdXYl5QHGoESSkKhdmxw_aem_F93rAk_cqqYyxbjQQfGYNw"
+              class="inline-block bg-farm-green text-white px-6 py-3 rounded-lg hover:bg-farm-brown transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book on Airbnb
+            </a>
+            <a
+              href="/contact"
+              class="inline-block border-2 border-farm-green text-farm-green px-6 py-3 rounded-lg hover:bg-farm-green hover:text-white transition-colors"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl text-center mb-12 text-farm-green">Our Facilities</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {facilities.map(facility => (
+          <div class="text-center p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <span class="text-4xl mb-4 block">{facility.icon}</span>
+            <h3 class="text-xl font-bold mb-2 text-farm-green">{facility.title}</h3>
+            <p class="text-gray-600">{facility.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
